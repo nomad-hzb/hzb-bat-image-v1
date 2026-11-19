@@ -1,4 +1,4 @@
-![docker image](https://github.com/nomad-hzb/hzb-bat-image/actions/workflows/docker-publish.yml/badge.svg)
+![docker image](https://github.com/nomad-hzb/hzb-bat-image-v1/actions/workflows/docker-publish.yml/badge.svg)
 
 
 # nomad-hzb's NOMAD Oasis Distribution
@@ -50,16 +50,16 @@ Below are instructions for how to deploy this NOMAD Oasis distribution
 2. Clone the repository or download the repository as a zip file.
 
     ```sh
-    git clone https://github.com/nomad-hzb/hzb-bat-image.git
-    cd hzb-bat-image
+    git clone https://github.com/nomad-hzb/hzb-bat-image-v1.git
+    cd hzb-bat-image-v1
     ```
 
     or
 
     ```sh
-    curl-L -o hzb-bat-image.zip "https://github.com/nomad-hzb/hzb-bat-image/archive/main.zip"
-    unzip hzb-bat-image.zip
-    cd hzb-bat-image
+    curl-L -o hzb-bat-image-v1.zip "https://github.com/nomad-hzb/hzb-bat-image-v1/archive/main.zip"
+    unzip hzb-bat-image-v1.zip
+    cd hzb-bat-image-v1
     ```
 
 3. _On Linux only,_ recursively change the owner of the `.volumes` directory to the nomad user (1000)
@@ -185,7 +185,7 @@ You can find more details on setting up and maintaining an Oasis in the NOMAD do
 ### For an existing Oasis
 
 If you already have an Oasis running you only need to change the image being pulled in
-your `docker-compose.yaml` with `ghcr.io/nomad-hzb/hzb-bat-image:main` for the services
+your `docker-compose.yaml` with `ghcr.io/nomad-hzb/hzb-bat-image-v1:main` for the services
 `worker`, `app`, `north`, and `logtransfer`.
 
 If you want to use the `nomad.yaml` from this repository you also need to comment out
@@ -358,7 +358,7 @@ Note that the `base-notebook` image is more lightweight and uses less disk space
 The image is quite large and might cause a timeout the first time it is run. In order to avoid this you can pre pull the image with:
 
 ```sh
-docker pull ghcr.io/nomad-hzb/hzb-bat-image/jupyter:main
+docker pull ghcr.io/nomad-hzb/hzb-bat-image-v1/jupyter:main
 ```
 
 If you want additional python packages to be available to all users in the jupyter hub you can add those to the jupyter table in the [`pyproject.toml`](pyproject.toml):
@@ -501,7 +501,7 @@ Ideally all workflows should be triggered automatically but you might need to ru
 
 ## FAQ/Trouble shooting
 
-_I get an_ `Error response from daemon: Head "https://ghcr.io/v2/nomad-hzb/hzb-bat-image/manifests/main": unauthorized`
+_I get an_ `Error response from daemon: Head "https://ghcr.io/v2/nomad-hzb/hzb-bat-image-v1/manifests/main": unauthorized`
 _when trying to pull my docker image._
 
 Most likely you have not made the package public or provided a personal access token (PAT).
