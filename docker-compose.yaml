@@ -127,7 +127,7 @@ services:
   # nomad worker (processing)
   worker:
     restart: unless-stopped
-    image: ghcr.io/nomad-hzb/hzb-bat-image:v0.2.0
+    image: ghcr.io/nomad-hzb/hzb-bat-image-v1:v0.2.0
     platform: linux/amd64
     environment:
       NOMAD_SERVICE: nomad_oasis_worker
@@ -171,7 +171,7 @@ services:
   ## nomad gpu worker (actions)
   # gpu_worker:
   #   restart: unless-stopped
-  #   image: ghcr.io/nomad-hzb/hzb-bat-image/gpu-action:main
+  #   image: ghcr.io/nomad-hzb/hzb-bat-image-v1/gpu-action:main
   #   platform: linux/amd64
   #   container_name: nomad_oasis_gpu_worker
   #   env_file:
@@ -205,7 +205,7 @@ services:
   # # nomad cpu worker (actions)
   # cpu_worker:
   #   restart: unless-stopped
-  #   image: ghcr.io/nomad-hzb/hzb-bat-image/cpu-action:main
+  #   image: ghcr.io/nomad-hzb/hzb-bat-image-v1/cpu-action:main
   #   platform: linux/amd64
   #   container_name: nomad_oasis_cpu_worker
   #   env_file:
@@ -237,7 +237,7 @@ services:
   # nomad app (api + proxy)
   app:
     restart: unless-stopped
-    image: ghcr.io/nomad-hzb/hzb-bat-image:v0.2.0
+    image: ghcr.io/nomad-hzb/hzb-bat-image-v1:v0.2.0
     platform: linux/amd64
     container_name: nomad_oasis_app
     environment:
@@ -280,7 +280,7 @@ services:
   # nomad remote tools hub (JupyterHUB, e.g. for AI Toolkit)
   north:
     restart: unless-stopped
-    image: ghcr.io/nomad-hzb/hzb-bat-image:v0.2.0
+    image: ghcr.io/nomad-hzb/hzb-bat-image-v1:v0.2.0
     platform: linux/amd64
     container_name: nomad_oasis_north
     environment:
@@ -317,7 +317,7 @@ services:
   # to enable the logtransfer service run "docker compose --profile with_logtransfer up"
   logtransfer:
     restart: unless-stopped
-    image: ghcr.io/nomad-hzb/hzb-bat-image:v0.2.0
+    image: ghcr.io/nomad-hzb/hzb-bat-image-v1:v0.2.0
     platform: linux/amd64
     container_name: nomad_oasis_logtransfer
     environment:
@@ -365,7 +365,7 @@ services:
 
   # # jupyterlab image: (this is only used to pull the image, no service is run for this)
   # jupyterlab_image:
-  #   image: ghcr.io/nomad-hzb/hzb-bat-image/jupyter:main
+  #   image: ghcr.io/nomad-hzb/hzb-bat-image-v1/jupyter:main
   #   platform: linux/amd64
   #   container_name: nomad_jupyter_image
   #   pull_policy: always
